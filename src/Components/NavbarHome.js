@@ -27,7 +27,7 @@ const NavbarHome = (props) => {
         </div>
 
         <div className="user-items">
-          <h4>HOLA PUTO</h4>
+          <h4>ES</h4>
           <img src="Img/star.svg" alt="" className="money" />
           <img
             src={
