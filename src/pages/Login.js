@@ -47,16 +47,10 @@ const Login = ({ history }) => {
   return (
     <div className="divLogin">
       <div className="log">
-        <div className="return">
-          <NavLink to="/">
-            <img src="Img/left.svg" alt="" />
-          </NavLink>
-        </div>
-
         <h4>BIENVENIDO A</h4>
         <div className="logo">
-          <div className="circle"> </div>
-          <h1>LOGO</h1>
+          <img src="Img/Logo.svg" alt="" />
+          <h1>CodeShop</h1>
         </div>
         <div className="register">
           <p>Inicia sesión para comprar los juegos que mas te gustan </p>
@@ -87,8 +81,8 @@ const Login = ({ history }) => {
       </div>
       <div className="image">
         <div className="paper">
-          <img src="Img/circle.png" alt="" />
-          <h1>LOGO</h1>
+          <img src="Img/Logo_land.svg" alt="" />
+          <h1>CodeShop</h1>
           <p>
             Compra los juegos que mas te gustan de manera digital y de forma
             segura

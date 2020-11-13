@@ -43,16 +43,10 @@ const Register = ({ history }) => {
   return (
     <div className="divLogin">
       <div className="log">
-        <div className="return">
-          <NavLink to="/">
-            <img src="Img/left.svg" alt="" />
-          </NavLink>
-        </div>
-
         <h4>BIENVENIDO A</h4>
         <div className="logo">
-          <div className="circle"> </div>
-          <h1>LOGO</h1>
+          <img src="Img/Logo.svg" alt="" />
+          <h1>CodeShop</h1>
         </div>
         <div className="register">
           <p>Crea tu cuenta para comprar los juegos que mas te gustan</p>
@@ -65,24 +59,25 @@ const Register = ({ history }) => {
               <img src="Img/mail.svg" alt="" className="icon" />
               <input className="input-field" name="email" type="email" />
             </div>
-            {/* <div className="inputUser">
-              <img src="Img/lock.svg" alt="" className="icon" />
-              <input className="input-field" name="email" type="email" />
-            </div> */}
 
             <div className="inputUser">
               <img src="Img/lock.svg" alt="" className="icon" />
               <input type="password" name="password" className="input-field" />
             </div>
             <button type="submit">CREAR CUENTA</button>
+
             <img src="Img/google.png" alt="Google" className="AuthGoogle" />
           </form>
         </div>
+        <span className="create">
+          <p>¿Ya tienes cuenta?</p>
+          <NavLink to="/Login">Inicia Sesión</NavLink>
+        </span>
       </div>
       <div className="image">
         <div className="paper">
-          <img src="Img/circle.png" alt="" />
-          <h1>LOGO</h1>
+          <img src="Img/Logo_land.svg" alt="" />
+          <h1>CodeShop</h1>
           <p>
             Compra los juegos que mas te gustan de manera digital y de forma
             segura

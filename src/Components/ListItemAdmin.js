@@ -15,7 +15,7 @@ function ListItemAdmin() {
 
   const addOrEditLink = async (linkObject) => {
     if (currentId === "") {
-      await db.collection(currentUser.uid).doc().set(linkObject);
+      await db.collection("Games").doc().set(linkObject);
       Swal.fire({
         position: "center",
         icon: "success",
@@ -24,7 +24,7 @@ function ListItemAdmin() {
         timer: 1500,
       });
     } else {
-      await db.collection(currentUser.uid).doc(currentId).update(linkObject);
+      await db.collection("Games").doc(currentId).update(linkObject);
       Swal.fire({
         position: "center",
         icon: "success",
@@ -38,7 +38,7 @@ function ListItemAdmin() {
 
   const onDeleteLink = async (id) => {
     if (window.confirm("Estas seguro de eliminar el enlace?") === true) {
-      await db.collection(currentUser.uid).doc(id).delete();
+      await db.collection("Games").doc(id).delete();
       Swal.fire({
         position: "center",
         icon: "success",
@@ -50,7 +50,7 @@ function ListItemAdmin() {
   };
 
   const getLinks = async () => {
-    db.collection(currentUser.uid).onSnapshot((querySnapshot) => {
+    db.collection("Games").onSnapshot((querySnapshot) => {
       const docs = [];
       querySnapshot.forEach((doc) => {
         docs.push({ ...doc.data(), id: doc.id });

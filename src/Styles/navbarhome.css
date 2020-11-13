@@ -32,7 +32,6 @@
     cursor: pointer;
 }
 
-
 .user-items {
     width: 8%;
     display: flex;
@@ -90,4 +89,31 @@
     background: #f35754;
     cursor: pointer;
     transition: 0.6s;
+}
+
+.loginBtn {
+    background-color: black;
+    color: #fff;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    outline: none;
+    text-decoration: none;
+    padding: 13px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-size: small;
+    box-shadow: 0px 0px 40px rgba(209, 209, 209, 0.25);
+    -webkit-backdrop-filter: saturate(120%) blur(90px);
+    backdrop-filter: saturate(120%) blur(40px);
+}
+
+.loginBtn:hover {
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
 }

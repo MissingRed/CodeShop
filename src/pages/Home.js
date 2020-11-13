@@ -10,29 +10,29 @@ import Game from "../Components/Game";
 
 const Home = () => {
   var usuario = firebase.auth().currentUser;
-  const [lista] = useState([1, 2, 3, 4, 5]);
+  // const [lista] = useState([1, 2, 3, 4, 5]);
 
-  if (!usuario.emailVerified) {
-    Swal.fire({
-      title: "Verifica tu correo!",
-      text: "Por favor verifica tu correo para poder comprar",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Enviar correo de verifiación",
-    }).then((result) => {
-      if (result.isConfirmed) {
-        usuario
-          .sendEmailVerification()
-          .then(function () {})
-          .catch(function (error) {
-            alert(error);
-          });
-        Swal.fire("Enviado!", "Revisa tu bandeja de entrada", "success");
-      }
-    });
-  }
+  // if (!usuario.emailVerified) {
+  //   Swal.fire({
+  //     title: "Verifica tu correo!",
+  //     text: "Por favor verifica tu correo para poder comprar",
+  //     icon: "warning",
+  //     showCancelButton: true,
+  //     confirmButtonColor: "#3085d6",
+  //     cancelButtonColor: "#d33",
+  //     confirmButtonText: "Enviar correo de verifiación",
+  //   }).then((result) => {
+  //     if (result.isConfirmed) {
+  //       usuario
+  //         .sendEmailVerification()
+  //         .then(function () {})
+  //         .catch(function (error) {
+  //           alert(error);
+  //         });
+  //       Swal.fire("Enviado!", "Revisa tu bandeja de entrada", "success");
+  //     }
+  //   });
+  // }
 
   return (
     <div>

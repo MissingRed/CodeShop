@@ -8,7 +8,7 @@ function Game() {
   const { currentUser } = useContext(AuthContext);
 
   const getLinks = async () => {
-    db.collection(currentUser.uid).onSnapshot((querySnapshot) => {
+    db.collection("Games").onSnapshot((querySnapshot) => {
       const docs = [];
       querySnapshot.forEach((doc) => {
         docs.push({ ...doc.data(), id: doc.id });

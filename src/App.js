@@ -16,7 +16,7 @@ function App() {
           <Route exact path="/" component={LandingPage} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/Register" component={Register} />
-          <PrivateRoute exact path="/Home" component={Home} />
+          <Route exact path="/Home" component={Home} />
           <PrivateRoute exact path="/Admin" component={Admin} />
           {/* <PrivateRoute exact path="/login" component={Home} /> */}
         </Switch>

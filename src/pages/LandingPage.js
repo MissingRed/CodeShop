@@ -1,6 +1,8 @@
 import React from "react";
-import Navbar from "../Components/Navbar";
+
 import NavbarHome from "../Components/NavbarHome";
+import { NavLink } from "react-router-dom";
+
 import "../Styles/landingpage.css";
 
 function LandingPage() {
@@ -21,7 +23,9 @@ function LandingPage() {
                 <div>
                   <h1>DISFRUTA EN GRANDE</h1>
                   <p>Con el mejor contenido digital</p>
-                  <button>Obtener más</button>
+                  <NavLink to="/Home" className="storeBtn">
+                    Ir a la Tienda
+                  </NavLink>
                 </div>
               </div>
               <div className="derecha">
