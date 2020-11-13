@@ -5,7 +5,6 @@ import Login from "./pages/Login";
 import Home from "./pages/Home";
 import Register from "./pages/Register";
 import Admin from "./pages/Admin";
-
 import { AuthProvider } from "../src/Database/Auth";
 import PrivateRoute from "../src/Components/PrivateRoute";
 
