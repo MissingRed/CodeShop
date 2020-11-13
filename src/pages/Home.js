@@ -36,7 +36,7 @@ const Home = () => {
 
   return (
     <div>
-      <NavbarHome />
+      <NavbarHome home="Tienda" />
       <Topbar />
       <Sidebar />
       <div className="store">

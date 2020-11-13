@@ -69,6 +69,7 @@
 .modal p {
     background: transparent;
     font-size: small;
+    color: black;
 }
 
 .modal button {

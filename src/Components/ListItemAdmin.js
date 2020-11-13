@@ -90,7 +90,7 @@ function ListItemAdmin() {
             <div className="info">
               <p>1.</p>
               <div className="img">
-                <img src={url} alt="" />
+                <img src={producto.url} alt="" />
               </div>
               <div className="nombre">
                 <p>{producto.name}</p>
