@@ -1,0 +1,66 @@
+.header {
+  display: flex;
+  height: 15vh;
+  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+}
+
+.header.home a {
+  color: black;
+}
+
+.header.home h1 {
+  color: black;
+}
+
+.header.home {
+  padding-left: 40px;
+  height: 12vh;
+  position: fixed;
+  top: 0;
+  width: 97%;
+}
+
+.header h1 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.logo2 {
+  width: 7.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.logo2 img {
+  width: 30px;
+}
+
+.header ul {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header li {
+  position: relative;
+  list-style: none;
+  font-size: 1.1rem;
+}
+
+.header a {
+  position: relative;
+  color: white;
+  margin: 0 35px;
+  font-weight: 200;
+  font-size: larger;
+  text-decoration: none;
+  letter-spacing: 2px;
+}

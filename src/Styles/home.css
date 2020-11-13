@@ -1,0 +1,129 @@
+.store {
+    position: fixed;
+    margin-left: 13%;
+    width: 84%;
+    height: 100vh;
+}
+
+.forsale {
+    width: 100%;
+    height: 30vh;
+    display: flex;
+}
+
+.ofert {
+    width: 70%;
+    background-color: white;
+    margin: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.banner {
+    position: absolute;
+    color: white;
+    font-size: xx-large;
+    z-index: 9000;
+}
+
+.banner h3 {
+    margin: 10px;
+    margin-left: 30px;
+    margin-top: 25px;
+    margin-bottom: 7%;
+}
+
+.button {
+    display: flex;
+    z-index: 9000;
+}
+
+.button p {
+    width: 100%;
+    font-size: 15px;
+    background: #E7EDEF;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.botones {
+    display: flex;
+    z-index: 9000;
+}
+
+.buy {
+    display: flex;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    text-align: center;
+    align-items: center;
+}
+
+.see {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.button.black p {
+    background: black;
+    color: white;
+    border: 3px solid #E7EDEF;
+}
+
+.ofert video {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+    transition: transform 2s, filter 1.5s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(50%);
+}
+
+.ofert:hover video {
+    filter: brightness(100%);
+    transform: scale(1.3);
+}
+
+.curva {
+    height: 10px;
+    border-radius: 10px;
+}
+
+.video {
+    width: 30%;
+    background-color: white;
+    margin: 10px;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.video iframe {
+    border-radius: 20px;
+}
+
+.title, .subtitle {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.video .title {
+    margin-top: 15px;
+}
+
+.subtitle {
+    font-size: small;
+    color: rgba(0, 0, 0, 0.562);
+    font-weight: bold;
+}
+
+.shop {
+    height: 100%;
+    margin-top: 3%;
+    display: flex;
+}

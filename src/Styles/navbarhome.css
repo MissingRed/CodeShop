@@ -1,0 +1,92 @@
+.top {
+    margin: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.lateral {
+    width: 30px;
+    background: transparent;
+    margin-right: 1vw;
+}
+
+.left h3 {
+    margin: 0;
+}
+
+.logo {
+    width: 100px;
+}
+
+.circle-user {
+    width: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+.user-items {
+    width: 8%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    justify-content: space-between;
+}
+
+.money {
+    width: 25px;
+}
+
+.modal {
+    position: relative;
+    width: calc(10% - 10px);
+    background: white;
+    height: auto;
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    position: absolute;
+    border-radius: 5px;
+    top: 80px;
+    left: 87%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9000;
+    text-align: center;
+}
+
+.modal p {
+    background: transparent;
+    font-size: small;
+}
+
+.modal button {
+    background: #f53c39;
+    border: 0;
+    color: white;
+    padding: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background: #f35754;
+    cursor: pointer;
+    transition: 0.6s;
+}

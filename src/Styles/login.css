@@ -1,0 +1,197 @@
+.divLogin {
+    width: 100%;
+    display: flex;
+    height: 100vh;
+}
+
+.return {
+    position: absolute;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(183.75deg, #DC2430 3.03%, #7B4397 97.28%), #EB5757;
+    cursor: pointer;
+}
+
+.return:hover {
+    padding: 12px;
+    box-shadow: 1px 1px 3px 2px rgba(160, 66, 66, 0.719);
+}
+
+.circle {
+    background: linear-gradient(183.75deg, #DC2430 3.03%, #7B4397 97.28%), #EB5757;
+    border-radius: 50%;
+    padding: 25px;
+    margin-right: 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.log, .image {
+    width: 100%;
+}
+
+.logo h1 {
+    color: #EB5757;
+}
+
+.image {
+    color: white;
+    background-image: url(https://images.unsplash.com/photo-1555864326-5cf22ef123cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80);
+}
+
+.paper {
+    width: 100%;
+    height: 100vh;
+    background: rgba(235, 87, 87, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.paper img {
+    width: 70px;
+}
+
+.paper h1 {
+    font-size: 64px;
+    margin: 0;
+}
+
+.paper p {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 30px;
+    text-align: center;
+}
+
+.log {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.log h4 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.log h1 {
+    font-size: 64px;
+}
+
+.log p {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+}
+
+.log input[type="email"], input[type="password"] {
+    width: 100%;
+    margin-bottom: 7%;
+    border-radius: 50px;
+    border: 2px solid rgba(139, 139, 139, 0.5);
+    padding: 15px;
+    outline: none;
+    box-sizing: border-box;
+    color: rgba(107, 107, 107, 0.897);
+    font-weight: 600;
+}
+
+.log input[type="text"] {
+    text-transform: uppercase;
+}
+
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register form {
+    width: 100%;
+    text-align: center;
+}
+
+.register button {
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #DC2430 0%, #7B4397 100%);
+    color: white;
+    font-size: 20px;
+    margin-bottom: 7%;
+    box-shadow: 1px 1px 3px 2px rgba(235, 87, 87, 0.25);
+    cursor: pointer;
+    outline: none;
+}
+
+.register button:hover {
+    box-shadow: 1px 1px 3px 2px rgba(160, 66, 66, 0.719);
+}
+
+.register p {
+    margin-bottom: 10%;
+}
+
+.create {
+    display: flex;
+}
+
+.create p {
+    margin: 0;
+}
+
+.create a {
+    margin-left: 1rem;
+    color: #EB5757;
+    font-weight: 600;
+}
+
+.inputUser img {
+    position: absolute;
+}
+
+.inputUser {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.icon {
+    padding: 10px;
+    padding-left: 25px;
+    min-width: 28px;
+    text-align: center;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.AuthGoogle {
+    background: white;
+    padding: 5px;
+    width: 50px;
+    box-shadow: 1px 1px 3px 2px rgba(41, 41, 41, 0.295);
+    border-radius: 50px;
+    margin-bottom: 7%;
+    cursor: pointer;
+}
+
+.AuthGoogle:hover {
+    box-shadow: 1px 1px 3px 2px rgba(41, 41, 41, 0.466);
+}

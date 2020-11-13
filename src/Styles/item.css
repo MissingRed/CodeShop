@@ -1,0 +1,22 @@
+.one {
+    width: 17%;
+    height: 55%;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+   
+}
+
+.one img {
+    margin-top: 30px;
+    width: 150px;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+}
+
+.one .precio {
+    font-size: 16px;
+    font-weight: 500;
+}

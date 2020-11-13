@@ -1,0 +1,110 @@
+.lista {
+    margin-top: 2%;
+}
+
+.itemAdmin {
+    display: flex;
+    width: 100%;
+    height: 55px;
+    background: white;
+    border-radius: 15px;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.img {
+    display: flex;
+    padding-left: 10px;
+    width: 50px;
+}
+
+.itemAdmin img {
+    width: 40px;
+    border-radius: 5px;
+}
+
+.info {
+    padding-left: 10px;
+    display: flex;
+    width: 25%;
+    justify-content: space-between;
+}
+
+.op button {
+    background-color: black;
+    color: #fff;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    outline: none;
+    text-decoration: none;
+    padding: 13px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.op button:hover {
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.modalAdd {
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 70vh;
+    background: white;
+    z-index: 50;
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    border-radius: 25px;
+    padding: 50px;
+}
+
+.completos {
+    margin-top: 3%;
+}
+
+.operaciones i {
+    margin-right: 20px;
+}
+
+.red {
+    background: #f53c39;
+    color: white;
+    padding: 7px;
+    border-radius: 7px;
+    font-size: small;
+    font-style: normal;
+    cursor: pointer;
+}
+
+.red:hover {
+    background: #f53c39d0;
+}
+
+.blue:hover {
+    background: #3472f7da;
+}
+
+.blue {
+    background: #3472f7;
+    color: white;
+    padding: 7px;
+    border-radius: 7px;
+    font-size: small;
+    font-style: normal;
+    cursor: pointer;
+}

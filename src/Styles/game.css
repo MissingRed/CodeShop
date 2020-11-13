@@ -1,0 +1,54 @@
+.card {
+    width: 200px;
+    height: 270px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 3%;
+}
+
+.photo {
+    width: 110px;
+    border-radius: 5px;
+}
+
+.titleGame {
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.precio {
+    color: rgba(0, 0, 0, 0.61);
+    font-weight: bold;
+}
+
+.precio {
+    margin: 0;
+}
+
+.section {
+    text-align: center;
+}
+
+.start1 {
+    width: 100%;
+    text-align: end;
+}
+
+.add {
+    width: 100%;
+    text-align: end;
+}
+
+.circle1 img {
+    position: absolute;
+    padding: 10px;
+    border-radius: 50px;
+    background: white;
+    border: 10px solid #E7EDEF;
+    margin-top: -25px;
+    margin-left: -25px;
+}
