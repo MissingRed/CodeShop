@@ -9,7 +9,7 @@ function LandingPage() {
   return (
     <div className="content">
       <div className="Container">
-        <video autoPlay="" loop="loop" muted className="Video">
+        <video autoPlay="autoplay" loop="loop" muted className="Video">
           <source src={videoSource} type="video/mp4" />
         </video>
 
