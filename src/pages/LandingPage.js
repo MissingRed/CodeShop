@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 import "../Styles/landingpage.css";
 
 function LandingPage() {
-  const videoSource = "Video/Video_land.mp4";
+  const videoSource = "http://danielrf.com/video/Video_land.mp4";
   return (
     <div className="content">
       <div className="Container">
