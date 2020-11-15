@@ -14,6 +14,10 @@ function ListItemAdmin() {
   const [url, setUrl] = useState("");
 
   const addOrEditLink = async (linkObject) => {
+    const sleep = (milliseconds) => {
+      return new Promise((resolve) => setTimeout(resolve, milliseconds));
+    };
+
     if (currentId === "") {
       await db.collection("Games").doc().set(linkObject);
       Swal.fire({
@@ -23,6 +27,8 @@ function ListItemAdmin() {
         showConfirmButton: false,
         timer: 1500,
       });
+      await sleep(2000);
+      setOpenModal(false);
     } else {
       await db.collection("Games").doc(currentId).update(linkObject);
       Swal.fire({
@@ -37,16 +43,24 @@ function ListItemAdmin() {
   };
 
   const onDeleteLink = async (id) => {
-    if (window.confirm("Estas seguro de eliminar el enlace?") === true) {
-      await db.collection("Games").doc(id).delete();
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Producto Eliminado",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-    }
+    Swal.fire({
+      title: "Estas seguro de Eliminar este producto?",
+      text: "No podras revertir los cambios",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Si! Eliminar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        db.collection("Games").doc(id).delete();
+        Swal.fire(
+          "Eliminado",
+          "El pruducto se ha eliminado con exito",
+          "success"
+        );
+      }
+    });
   };
 
   const getLinks = async () => {
@@ -79,7 +93,9 @@ function ListItemAdmin() {
       </div>
       {openModal ? (
         <div className="modalAdd">
-          <ListformAdmin {...{ addOrEditLink, currentId, productos }} />
+          <ListformAdmin
+            {...{ addOrEditLink, currentId, productos, setOpenModal }}
+          />
         </div>
       ) : (
         ""

@@ -6,6 +6,8 @@ import { storage } from "../Database/Base";
 const ListformAdmin = (props) => {
   const { currentUser } = useContext(AuthContext);
   const [image, setImage] = useState(null);
+  const [progress, setProgress] = useState(0);
+
   const initStateValue = {
     name: "",
     quantity: "",
@@ -43,7 +45,12 @@ const ListformAdmin = (props) => {
 
     uploadTask.on(
       "state_changed",
-      (snapshot) => {},
+      (snapshot) => {
+        const progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        setProgress(progress);
+      },
       (error) => {
         console.log(error);
       },
@@ -71,33 +78,49 @@ const ListformAdmin = (props) => {
 
   return (
     <>
-      <h1>Agregar Producto</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Nombre del producto"
-          name="name"
-          onChange={handleInputChange}
-          value={values.name}
-        />
-        <input
-          name="quantity"
-          placeholder="Numero de unidades"
-          onChange={handleInputChange}
-          value={values.quantity}
-        ></input>
-        <input
-          name="price"
-          placeholder="Precio"
-          onChange={handleInputChange}
-          value={values.price}
-        ></input>
-        <input type="file" name="" id="" onChange={uploadImage} />
+      <div className="completeForm">
+        <div className="cerrar">
+          <button onClick={() => props.setOpenModal(false)} className="close">
+            <img src="Img/minimize.svg" alt="" />
+          </button>
+        </div>
 
-        <button className="button">
-          {props.currentId === "" ? "Guardar Link" : "Actualizar"}
-        </button>
-      </form>
+        <div className="formAdd">
+          <h1>Agregar Producto</h1>
+          <form onSubmit={handleSubmit} className="addForm">
+            <input
+              type="text"
+              placeholder="Nombre del producto"
+              name="name"
+              onChange={handleInputChange}
+              value={values.name}
+            />
+            <input
+              name="quantity"
+              placeholder="Numero de unidades"
+              onChange={handleInputChange}
+              value={values.quantity}
+              type="text"
+            ></input>
+            <input
+              name="price"
+              placeholder="Precio"
+              onChange={handleInputChange}
+              value={values.price}
+              type="number"
+            ></input>
+            <input type="file" name="" id="" onChange={uploadImage} />
+
+            <button>
+              {props.currentId === "" ? "GUARDAR PRODRUCTO" : "ACTUALIZAR"}
+            </button>
+          </form>
+        </div>
+        {/* <div className="imgForm">
+          <img src={url || "http://via.placeholder.com/300"} alt="Imagen" />
+          <progress value={progress} max="100" />
+        </div> */}
+      </div>
     </>
   );
 };

@@ -1,15 +1,74 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Sidebar from "../Components/Sidebar";
-
+import { db } from "../Database/Base";
 import "../Styles/home.css";
-import Swal from "sweetalert2";
-import firebase from "firebase/app";
+// import Swal from "sweetalert2";
+// import firebase from "firebase/app";
 import NavbarHome from "../Components/NavbarHome";
 import Topbar from "../Components/Topbar";
 import Game from "../Components/Game";
 
 const Home = () => {
-  var usuario = firebase.auth().currentUser;
+  // var usuario = firebase.auth().currentUser;
+  const [SearchResult, setSearchResult] = useState([]);
+  const [InputSearch, SetInputSearch] = useState("");
+
+  const handleChangeSearch = async (e) => {
+    SetInputSearch(e.target.value);
+
+    if (e.target.value) {
+      const user = await db
+        .collection("Games")
+        .limit(10)
+        .where("name", ">=", e.target.value)
+        .where("name", "<=", e.target.value + "\uf8ff")
+        .get();
+
+      const docs = [];
+
+      user.forEach((doc) => {
+        docs.push({
+          name: doc.get("name"),
+          price: doc.get("price"),
+          quantity: doc.get("quantity"),
+          url: doc.get("url"),
+        });
+      });
+      console.log(docs);
+      setSearchResult(docs);
+      SearchResult.map((res) => console.log(res.name));
+    } else {
+      setSearchResult([]);
+    }
+  };
+
+  const seares = () => {
+    var name = "";
+    name = SearchResult.map((res) => (
+      <div className="card">
+        <div className="start1">
+          <img src="Img/start1.svg" alt="" />
+        </div>
+        <div className="section">
+          <img src={res.url} className="photo" />
+        </div>
+
+        <div className="data">
+          <p className="titleGame">{res.name}</p>
+
+          <p className="precio">${res.price}</p>
+        </div>
+
+        <div className="add">
+          <div className="circle1">
+            <img src="Img/plus.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    ));
+
+    return name;
+  };
   // const [lista] = useState([1, 2, 3, 4, 5]);
 
   // if (!usuario.emailVerified) {
@@ -37,7 +96,8 @@ const Home = () => {
   return (
     <div>
       <NavbarHome home="Tienda" />
-      <Topbar />
+
+      <Topbar Search={handleChangeSearch} />
       <Sidebar />
       <div className="store">
         <div className="forsale">
@@ -73,8 +133,15 @@ const Home = () => {
             <p className="subtitle">El Amo y el señor de Inglaterra</p>
           </div>
         </div>
+
         <div className="shop">
-          <Game />
+          <div onChange={handleChangeSearch} className="Hola">
+            {InputSearch ? (
+              <div className="cardSearch">{seares()}</div>
+            ) : (
+              <Game />
+            )}
+          </div>
         </div>
       </div>
     </div>

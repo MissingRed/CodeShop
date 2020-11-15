@@ -1,13 +1,17 @@
 import React, { useCallback, useContext } from "react";
+import { withRouter, Redirect } from "react-router";
+
 import Swal from "sweetalert2";
 import "../Styles/login.css";
 import { NavLink } from "react-router-dom";
 import firebase from "firebase/app";
 import "firebase/auth";
 import app from "../Database/Base.js";
+import { AuthContext } from "../Database/Auth.js";
 
 const Register = ({ history }) => {
-  var usuario = firebase.auth().currentUser;
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
+
   const handleRegister = useCallback(
     async (event) => {
       event.preventDefault();
@@ -40,6 +44,21 @@ const Register = ({ history }) => {
     [history]
   );
 
+  const { currentUser } = useContext(AuthContext);
+
+  const googleAuth = () => {
+    firebase
+      .auth()
+      .signInWithPopup(googleProvider)
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
+  if (currentUser) {
+    return <Redirect to="/Home" />;
+  }
+
   return (
     <div className="divLogin">
       <div className="log">
@@ -66,7 +85,12 @@ const Register = ({ history }) => {
             </div>
             <button type="submit">CREAR CUENTA</button>
 
-            <img src="Img/google.png" alt="Google" className="AuthGoogle" />
+            <img
+              src="Img/google.png"
+              alt="Google"
+              onClick={googleAuth}
+              className="AuthGoogle"
+            />
           </form>
         </div>
         <span className="create">

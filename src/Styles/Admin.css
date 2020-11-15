@@ -4,7 +4,7 @@
 
 .itemAdmin {
     display: flex;
-    width: 100%;
+    width: 98%;
     height: auto;
     background: white;
     border-radius: 15px;
@@ -59,19 +59,18 @@
 
 .modalAdd {
     box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.25);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 70vh;
+    width: 30vw;
+    height: auto;
     background: white;
     z-index: 50;
     -webkit-backdrop-filter: saturate(180%) blur(10px);
     border-radius: 25px;
     padding: 50px;
+    padding-top: 30px;
 }
 
 .completos {
@@ -115,3 +114,102 @@
     display: flex;
     align-items: center;
 }
+
+.addForm {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.formAdd {
+    text-align: center;
+}
+
+.addForm input {
+    background: #e7edef;
+    border-radius: 7px;
+    font-weight: 400;
+    margin-bottom: 8%;
+}
+
+.addForm input[type="number"], input[type="file"] {
+    width: 100%;
+    margin-bottom: 4%;
+    border-radius: 7px;
+    border: 0;
+    padding: 15px;
+    outline: none;
+    box-sizing: border-box;
+    color: rgba(107, 107, 107, 0.897);
+    margin-bottom: 8%;
+}
+
+.addForm button {
+    width: 100%;
+    text-align: center;
+    background-color: black;
+    color: #fff;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    outline: none;
+    text-decoration: none;
+    padding: 13px;
+    border: 0;
+    cursor: pointer;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.completeForm {
+    width: 100%;
+}
+
+.imgForm {
+    width: 50%;
+    margin-top: 7%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgForm img {
+    width: 300px;
+    border-radius: 15px;
+    margin-bottom: 5%;
+}
+
+.imgForm progress {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50%;
+    height: 30px;
+}
+
+.imgForm progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.cerrar {
+    width: 100%;
+    text-align: end;
+}
+
+.close {
+    text-align: end;
+    background: none;
+    border: 0;
+    color: inherit;
+    outline: none;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* .close:hover {
+    box-shadow: 0px 0px 40px rgba(26, 26, 26, 0.466);
+    -webkit-backdrop-filter: saturate(0%) blur(0px);
+    backdrop-filter: saturate(0) blur(0px);
+} */

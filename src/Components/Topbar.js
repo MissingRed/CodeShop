@@ -1,7 +1,7 @@
 import React from "react";
 import "../Styles/topbar.css";
 
-const Topbar = () => {
+const Topbar = (props) => {
   return (
     <React.Fragment>
       <div className="topbar">
@@ -25,9 +25,15 @@ const Topbar = () => {
             <p>Clash Of Clans</p>
           </div>
         </div>
-        <div className="search">
-          <p>Buscar</p>
-          <img src="Img/search.svg" alt="Search" />
+        <div className="inputSearch">
+          <img src="Img/search.svg" alt="" className="icon1" />
+          <input
+            type="text"
+            name=""
+            id=""
+            onChange={props.Search}
+            className="input-search"
+          />
         </div>
       </div>
     </React.Fragment>

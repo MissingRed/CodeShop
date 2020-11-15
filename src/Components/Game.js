@@ -5,7 +5,6 @@ import { AuthContext } from "../Database/Auth";
 
 function Game() {
   const [productos, SetProductos] = useState([]);
-  const { currentUser } = useContext(AuthContext);
 
   const getLinks = async () => {
     db.collection("Games").onSnapshot((querySnapshot) => {
@@ -34,6 +33,7 @@ function Game() {
 
           <div className="data">
             <p className="titleGame">{producto.name}</p>
+
             <p className="precio">${producto.price}</p>
           </div>
 
