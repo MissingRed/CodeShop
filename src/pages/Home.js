@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Sidebar from "../Components/Sidebar";
 import { db } from "../Database/Base";
 import "../Styles/home.css";
-// import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 // import firebase from "firebase/app";
 import NavbarHome from "../Components/NavbarHome";
 import Topbar from "../Components/Topbar";
 import Game from "../Components/Game";
 
+import { AuthContext } from "../Database/Auth";
+
 const Home = () => {
   // var usuario = firebase.auth().currentUser;
+  const { currentUser } = useContext(AuthContext);
   const [SearchResult, setSearchResult] = useState([]);
   const [InputSearch, SetInputSearch] = useState("");
 
@@ -22,6 +25,35 @@ const Home = () => {
         .limit(10)
         .where("name", ">=", e.target.value)
         .where("name", "<=", e.target.value + "\uf8ff")
+        .get();
+
+      const docs = [];
+
+      user.forEach((doc) => {
+        docs.push({
+          name: doc.get("name"),
+          price: doc.get("price"),
+          quantity: doc.get("quantity"),
+          url: doc.get("url"),
+        });
+      });
+      console.log(docs);
+      setSearchResult(docs);
+      SearchResult.map((res) => console.log(res.name));
+    } else {
+      setSearchResult([]);
+    }
+  };
+
+  const handleChangeFilter = async (e) => {
+    SetInputSearch(e.target.value);
+
+    if (e.target.value) {
+      const user = await db
+        .collection("Games")
+        .limit(10)
+        .where("category", ">=", e.target.value)
+        .where("category", "<=", e.target.value + "\uf8ff")
         .get();
 
       const docs = [];
@@ -71,33 +103,39 @@ const Home = () => {
   };
   // const [lista] = useState([1, 2, 3, 4, 5]);
 
-  // if (!usuario.emailVerified) {
-  //   Swal.fire({
-  //     title: "Verifica tu correo!",
-  //     text: "Por favor verifica tu correo para poder comprar",
-  //     icon: "warning",
-  //     showCancelButton: true,
-  //     confirmButtonColor: "#3085d6",
-  //     cancelButtonColor: "#d33",
-  //     confirmButtonText: "Enviar correo de verifiación",
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       usuario
-  //         .sendEmailVerification()
-  //         .then(function () {})
-  //         .catch(function (error) {
-  //           alert(error);
-  //         });
-  //       Swal.fire("Enviado!", "Revisa tu bandeja de entrada", "success");
-  //     }
-  //   });
-  // }
+  useEffect(() => {
+    if (currentUser) {
+      if (!currentUser.emailVerified) {
+        Swal.fire({
+          title: "Verifica tu correo!",
+          text: "Por favor verifica tu correo para poder comprar",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Enviar correo de verifiación",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            currentUser
+              .sendEmailVerification()
+              .then(function () {})
+              .catch(function (error) {
+                alert(error);
+              });
+            Swal.fire("Enviado!", "Revisa tu bandeja de entrada", "success");
+          }
+        });
+      }
+    }
+  }, []);
 
   return (
     <div>
-      <NavbarHome home="Tienda" />
+      <div className="sticky-header">
+        <NavbarHome home="Tienda" />
+        <Topbar Search={handleChangeSearch} Filter={handleChangeFilter} />
+      </div>
 
-      <Topbar Search={handleChangeSearch} />
       <Sidebar />
       <div className="store">
         <div className="forsale">
@@ -135,7 +173,10 @@ const Home = () => {
         </div>
 
         <div className="shop">
-          <div onChange={handleChangeSearch} className="Hola">
+          <div
+            onChange={(handleChangeSearch, handleChangeFilter)}
+            className="Hola"
+          >
             {InputSearch ? (
               <div className="cardSearch">{seares()}</div>
             ) : (

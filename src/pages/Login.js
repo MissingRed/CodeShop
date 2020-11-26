@@ -41,7 +41,11 @@ const Login = ({ history }) => {
   const { currentUser } = useContext(AuthContext);
 
   if (currentUser) {
-    return <Redirect to="/Home" />;
+    if (currentUser.email == "rodriguezdaniel048@gmail.com") {
+      return <Redirect to="/Admin" />;
+    } else {
+      return <Redirect to="/Home" />;
+    }
   }
 
   return (

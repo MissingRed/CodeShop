@@ -12,7 +12,7 @@ const ListformAdmin = (props) => {
     name: "",
     quantity: "",
     price: "",
-    img: "",
+    category: "",
   };
 
   const [values, setValues] = useState(initStateValue);
@@ -95,6 +95,13 @@ const ListformAdmin = (props) => {
               onChange={handleInputChange}
               value={values.name}
             />
+            {/* <input
+              name="category"
+              placeholder="Categoria"
+              onChange={handleInputChange}
+              value={values.category}
+              type="text"
+            ></input> */}
             <input
               name="quantity"
               placeholder="Numero de unidades"
@@ -102,6 +109,7 @@ const ListformAdmin = (props) => {
               value={values.quantity}
               type="text"
             ></input>
+
             <input
               name="price"
               placeholder="Precio"
@@ -110,7 +118,10 @@ const ListformAdmin = (props) => {
               type="number"
             ></input>
             <input type="file" name="" id="" onChange={uploadImage} />
-
+            <select name="category" onChange={handleInputChange}>
+              <option value="xbox">Windows Vista</option>
+              <option value="hola">hola</option>
+            </select>
             <button>
               {props.currentId === "" ? "GUARDAR PRODRUCTO" : "ACTUALIZAR"}
             </button>

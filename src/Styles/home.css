@@ -134,7 +134,14 @@
     justify-content: space-between;
 }
 
-.complete{
-
+.complete {
     margin-top: 120px;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    background: #e7edef;
+    padding-bottom: 1px;
 }

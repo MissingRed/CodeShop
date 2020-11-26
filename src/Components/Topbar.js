@@ -6,23 +6,36 @@ const Topbar = (props) => {
     <React.Fragment>
       <div className="topbar">
         <div className="recoment">
-          <div className="item ">
-            <p>League Of legends</p>
+          <div className="item">
+            <button onClick={props.Filter} value="">
+              Todos
+            </button>
           </div>
           <div className="item">
-            <p>Fortnite</p>
-          </div>
-          <div className="item negro">
-            <p>Play Station</p>
-          </div>
-          <div className="item">
-            <p>Google Play</p>
+            <button onClick={props.Filter} value="League Of Legends">
+              League Of Legends
+            </button>
           </div>
           <div className="item">
-            <p>Valorant</p>
+            <button onClick={props.Filter} value="Fortnite">
+              Fortnite
+            </button>
           </div>
           <div className="item">
-            <p>Clash Of Clans</p>
+            <button onClick={props.Filter} value="Play Station">
+              Play Station
+            </button>
+          </div>
+
+          <div className="item">
+            <button onClick={props.Filter} value="Valorant">
+              Valorant
+            </button>
+          </div>
+          <div className="item">
+            <button onClick={props.Filter} value="Clash Of Clans">
+              Clash Of Clans
+            </button>
           </div>
         </div>
         <div className="inputSearch">
@@ -34,6 +47,9 @@ const Topbar = (props) => {
             onChange={props.Search}
             className="input-search"
           />
+          {/* <button onClick={props.Filter} value="Putos">
+            Hola
+          </button> */}
         </div>
       </div>
     </React.Fragment>

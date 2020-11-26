@@ -15,15 +15,13 @@
 .item {
     background: white;
     border-radius: 10px;
-    padding: 10px;
     color: rgba(0, 0, 0, 0.507);
     font-weight: bold;
     font-size: small;
     text-align: center;
     display: flex;
     justify-content: center;
-    padding-left: 1%;
-    padding-right: 1%;
+    cursor: pointer;
 }
 
 .item p {
@@ -34,6 +32,35 @@
     background: black;
     color: white;
 }
+
+.item button {
+    font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    border: 0;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: rgba(0, 0, 0, .507);
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.item>:hover {
+    background: black;
+    color: white;
+}
+
+.item:hover {
+    color: white;
+}
+
+/* .item button {
+    border: 0;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.507);
+    
+} */
 
 .search {
     background: white;
@@ -78,8 +105,7 @@
 
 .inputSearch {
     width: 30%;
-    height: 10px;
-    margin-bottom: 10px;
+    height: 100%;
 }
 
 .inputSearch img {
